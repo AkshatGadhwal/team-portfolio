@@ -1,0 +1,507 @@
+/* Developer Profile Page Styles */
+
+/* Developer Hero Section */
+.developer-hero {
+    padding: 150px 0 80px;
+    background-color: var(--bg-color);
+}
+
+.developer-profile {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.developer-image {
+    flex: 0 0 300px;
+}
+
+.developer-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.developer-info {
+    flex: 1;
+}
+
+.developer-info h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.developer-info h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.developer-bio {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.developer-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.developer-social a {
+    width: 40px;
+    height: 40px;
+    background-color: var(--skill-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.developer-social a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.developer-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Expertise Section */
+.developer-expertise {
+    padding: 100px 0;
+    background-color: var(--bg-card);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.expertise-card {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.expertise-card:hover {
+    transform: translateY(-10px);
+}
+
+.expertise-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.expertise-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.expertise-card p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.expertise-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.expertise-skills li {
+    list-style: none;
+}
+
+.expertise-skills li span {
+    display: inline-block;
+    background-color: var(--team-tag-bg);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+/* Developer Projects Section */
+.developer-projects {
+    padding: 100px 0;
+    background-color: var(--bg-color);
+}
+
+.developer-projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card.featured {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.project-card.featured .project-image {
+    flex: 1;
+    height: auto;
+}
+
+.project-card.featured .project-info {
+    flex: 1;
+}
+
+.project-role {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Developer Experience Section */
+.developer-experience {
+    padding: 100px 0;
+    background-color: var(--bg-card);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0 20px 30px; /* Added left padding to prevent collision */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 30px; /* Moved the line to the left edge of the container */
+    margin-left: -2px;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 50px;
+    position: relative;
+    padding-left: 40px; /* Added padding to push content away from the line */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    flex: 0 0 100px;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 3px;
+    position: relative;
+}
+
+.timeline-date::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -50px; /* Repositioned the circle to align with the line */
+    top: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.2);
+    z-index: 1;
+}
+
+.timeline-date span {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.timeline-content {
+    flex: 1;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--bg-color);
+    left: -10px;
+    top: 15px;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.timeline-content p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.timeline-content .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.timeline-content .tags span {
+    display: inline-block;
+    background-color: var(--team-tag-bg);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Developer Testimonials Section */
+.developer-testimonials {
+    padding: 100px 0;
+    background-color: var(--bg-color);
+}
+
+.testimonials-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.testimonial-content::before {
+    content: '\201C';
+    font-size: 4rem;
+    font-family: Georgia, serif;
+    color: var(--primary-color);
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: -15px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+}
+
+.author-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.author-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.author-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Developer Contact Section */
+.developer-contact {
+    padding: 100px 0;
+    background-color: var(--bg-card);
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info {
+    max-width: 600px;
+}
+
+.contact-availability {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.contact-availability h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.contact-availability p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Skill Bars */
+.skills-container {
+    margin: 30px 0;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.skill-percentage {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 10px;
+    background-color: var(--skill-bg);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    width: var(--width);
+}
+
+/* Removing animation-related styles */
+
+/* Additional Dark Theme Button Styling */
+[data-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(100, 223, 223, 0.3);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 0 20px rgba(100, 223, 223, 0.5);
+  transform: translateY(-3px) scale(1.02);
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(100, 223, 223, 0.1);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: rgba(100, 223, 223, 0.1);
+  box-shadow: 0 0 15px rgba(100, 223, 223, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .project-card.featured {
+        grid-column: span 1;
+        display: block;
+    }
+    
+    .project-card.featured .project-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .developer-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .developer-image {
+        margin: 0 auto;
+    }
+    
+    .developer-social, .developer-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .developer-actions {
+        flex-direction: column;
+    }
+}
