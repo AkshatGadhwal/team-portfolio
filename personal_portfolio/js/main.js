@@ -1,4 +1,4 @@
-// Team Portfolio Main JavaScript
+// Main JavaScript for Portfolio
 
 // Toggle Mobile Menu
 const menuToggle = document.querySelector('.menu-toggle');
@@ -76,7 +76,7 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Contact Form Handling
+// Handle form submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -95,8 +95,8 @@ if (contactForm) {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
-            // For demonstration - normally would send to server
-            const response = await fetch('/api/contact', {
+            // Submit the form to Formspree
+            const response = await fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -104,13 +104,19 @@ if (contactForm) {
                 }
             });
             
+            const result = await response.json();
+            
             // Create message element
             const messageElement = document.createElement('div');
             
-            // Simulate successful submission
-            messageElement.className = 'success-message';
-            messageElement.textContent = 'Thanks! Your message has been sent successfully.';
-            contactForm.reset();
+            if (response.ok) {
+                messageElement.className = 'success-message';
+                messageElement.textContent = 'Thanks! Your message has been sent successfully.';
+                contactForm.reset();
+            } else {
+                messageElement.className = 'error-message';
+                messageElement.textContent = 'Oops! There was a problem sending your message. Please try again.';
+            }
             
             // Insert message before the form
             contactForm.parentNode.insertBefore(messageElement, contactForm);
@@ -130,10 +136,6 @@ if (contactForm) {
             errorElement.className = 'error-message';
             errorElement.textContent = 'Network error. Please check your connection and try again.';
             contactForm.parentNode.insertBefore(errorElement, contactForm);
-            
-            // Reset button
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
         }
     });
 }
@@ -166,35 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fallback for browsers without IntersectionObserver support
         lazyImages.forEach(img => {
             img.src = img.dataset.src;
-        });
-    }
-});
-
-// Animate skill bars when they come into view
-document.addEventListener('DOMContentLoaded', function() {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    
-    if ('IntersectionObserver' in window) {
-        const skillObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBar = entry.target;
-                    skillBar.style.width = skillBar.style.getPropertyValue('--width');
-                    observer.unobserve(skillBar);
-                }
-            });
-        }, {threshold: 0.3});
-        
-        skillBars.forEach(skillBar => {
-            // Set initial width to 0
-            skillBar.style.width = '0';
-            // Start observing
-            skillObserver.observe(skillBar);
-        });
-    } else {
-        // Fallback for browsers without IntersectionObserver support
-        skillBars.forEach(skillBar => {
-            skillBar.style.width = skillBar.style.getPropertyValue('--width');
         });
     }
 });
